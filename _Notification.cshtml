@@ -1,0 +1,525 @@
+﻿@using ECO._2015.Bussiness
+@model MailNotificationViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Registro de Cortometraje | Shortfilm Registry</title>
+</head>
+<body style="margin: 0;mso-line-height-rule: exactly;padding: 0;min-width: 100%;background-color: #fbfbfb;background: url('http://ecofilmfestival.org/wp-content/uploads/2014/03/ba-bg-004.jpg');">
+    <style type="text/css">
+        body, .wrapper, .emb-editor-canvas {
+            background-color: #fbfbfb;
+        }
+
+        .border {
+            background-color: #e9e9e9;
+        }
+
+        h1 {
+            color: #565656;
+        }
+
+        .wrapper h1 {
+        }
+
+        .wrapper h1 {
+            font-family: sans-serif;
+        }
+
+        @@media only screen and (min-width: 0) {
+            .wrapper h1 {
+                font-family: Avenir,sans-serif !important;
+            }
+        }
+
+        h1 {
+        }
+
+        .one-col h1 {
+            line-height: 42px;
+        }
+
+        .two-col h1 {
+            line-height: 32px;
+        }
+
+        .three-col h1 {
+            line-height: 26px;
+        }
+
+        .wrapper .one-col-feature h1 {
+            line-height: 58px;
+        }
+
+        @@media only screen and (max-width: 620px) {
+            h1 {
+                line-height: 42px !important;
+            }
+        }
+
+        h2 {
+            color: #555;
+        }
+
+        .wrapper h2 {
+        }
+
+        .wrapper h2 {
+            font-family: Georgia,serif;
+        }
+
+        h2 {
+        }
+
+        .one-col h2 {
+            line-height: 32px;
+        }
+
+        .two-col h2 {
+            line-height: 26px;
+        }
+
+        .three-col h2 {
+            line-height: 22px;
+        }
+
+        .wrapper .one-col-feature h2 {
+            line-height: 52px;
+        }
+
+        @@media only screen and (max-width: 620px) {
+            h2 {
+                line-height: 32px !important;
+            }
+        }
+
+        h3 {
+            color: #555;
+        }
+
+        .wrapper h3 {
+        }
+
+        .wrapper h3 {
+            font-family: Georgia,serif;
+        }
+
+        h3 {
+        }
+
+        .one-col h3 {
+            line-height: 26px;
+        }
+
+        .two-col h3 {
+            line-height: 22px;
+        }
+
+        .three-col h3 {
+            line-height: 20px;
+        }
+
+        .wrapper .one-col-feature h3 {
+            line-height: 42px;
+        }
+
+        @@media only screen and (max-width: 620px) {
+            h3 {
+                line-height: 26px !important;
+            }
+        }
+
+        p, ol, ul {
+            color: #565656;
+        }
+
+        .wrapper p, .wrapper ol, .wrapper ul {
+        }
+
+        .wrapper p, .wrapper ol, .wrapper ul {
+            font-family: Georgia,serif;
+        }
+
+        p, ol, ul {
+        }
+
+        .one-col p, .one-col ol, .one-col ul {
+            line-height: 25px;
+            Margin-bottom: 25px;
+        }
+
+        .two-col p, .two-col ol, .two-col ul {
+            line-height: 23px;
+            Margin-bottom: 23px;
+        }
+
+        .three-col p, .three-col ol, .three-col ul {
+            line-height: 21px;
+            Margin-bottom: 21px;
+        }
+
+        .wrapper .one-col-feature p, .wrapper .one-col-feature ol, .wrapper .one-col-feature ul {
+            line-height: 32px;
+        }
+
+        .one-col-feature blockquote p, .one-col-feature blockquote ol, .one-col-feature blockquote ul {
+            line-height: 50px;
+        }
+
+        @@media only screen and (max-width: 620px) {
+            p, ol, ul {
+                line-height: 25px !important;
+                Margin-bottom: 25px !important;
+            }
+        }
+
+        .image {
+            color: #565656;
+        }
+
+        .image {
+            font-family: Georgia,serif;
+        }
+
+        .wrapper a {
+            color: #41637e;
+        }
+
+            .wrapper a:hover {
+                color: #30495c !important;
+            }
+
+        .wrapper .logo div {
+            color: #41637e;
+        }
+
+        .wrapper .logo div {
+            font-family: sans-serif;
+        }
+
+        @@media only screen and (min-width: 0) {
+            .wrapper .logo div {
+                font-family: Avenir,sans-serif !important;
+            }
+        }
+
+        .wrapper .logo div a {
+            color: #41637e;
+        }
+
+            .wrapper .logo div a:hover {
+                color: #41637e !important;
+            }
+
+        .wrapper .one-col-feature p a, .wrapper .one-col-feature ol a, .wrapper .one-col-feature ul a {
+            border-bottom: 1px solid #41637e;
+        }
+
+            .wrapper .one-col-feature p a:hover, .wrapper .one-col-feature ol a:hover, .wrapper .one-col-feature ul a:hover {
+                color: #30495c !important;
+                border-bottom: 1px solid #30495c !important;
+            }
+
+        .btn a {
+        }
+
+        .wrapper .btn a {
+        }
+
+        .wrapper .btn a {
+            font-family: Georgia,serif;
+        }
+
+        .wrapper .btn a {
+            background-color: #41637e;
+            color: #fff !important;
+            outline-color: #41637e;
+            text-shadow: 0 1px 0 #3b5971;
+        }
+
+            .wrapper .btn a:hover {
+                background-color: #3b5971 !important;
+                color: #fff !important;
+                outline-color: #3b5971 !important;
+            }
+
+        .preheader .title, .preheader .webversion, .footer .padded {
+            color: #999;
+        }
+
+        .preheader .title, .preheader .webversion, .footer .padded {
+            font-family: Georgia,serif;
+        }
+
+            .preheader .title a, .preheader .webversion a, .footer .padded a {
+                color: #999;
+            }
+
+                .preheader .title a:hover, .preheader .webversion a:hover, .footer .padded a:hover {
+                    color: #737373 !important;
+                }
+
+        .footer .social .divider {
+            color: #e9e9e9;
+        }
+
+        .footer .social .social-text, .footer .social a {
+            color: #999;
+        }
+
+        .wrapper .footer .social .social-text, .wrapper .footer .social a {
+        }
+
+        .wrapper .footer .social .social-text, .wrapper .footer .social a {
+            font-family: Georgia,serif;
+        }
+
+        .footer .social .social-text, .footer .social a {
+        }
+
+        .footer .social .social-text, .footer .social a {
+            letter-spacing: 0.05em;
+        }
+
+            .footer .social .social-text:hover, .footer .social a:hover {
+                color: #737373 !important;
+            }
+
+        .image .border {
+            background-color: #c8c8c8;
+        }
+
+        .image-frame {
+            background-color: #dadada;
+        }
+
+        .image-background {
+            background-color: #f7f7f7;
+        }
+    </style>
+    <center class="wrapper" style="display: table;table-layout: fixed;width: 100%;min-width: 620px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%; background-color: transparent;">
+        <table class="gmail" style="border-collapse: collapse;border-spacing: 0;width: 650px;min-width: 650px"><tbody><tr><td style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px">&nbsp;</td></tr></tbody></table>
+        <table class="preheader centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+            <tbody>
+                <tr>
+                    <td style="padding: 0;vertical-align: top">
+                        <table style="border-collapse: collapse;border-spacing: 0;width: 602px">
+                            <tbody>
+                                <tr>
+                                    <td class="title" style="padding: 0;vertical-align: top;padding-top: 10px;padding-bottom: 12px;font-size: 12px;line-height: 21px;text-align: left;color: #999;font-family: Georgia,serif; text-align: center;">Registro de Cortometraje | Shortfilm Registry</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="header centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 602px">
+            <tbody>
+                <tr><td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">&nbsp;</td></tr>
+                <tr><td class="logo" style="padding: 32px 0;vertical-align: top;mso-line-height-rule: at-least"><div class="logo-center" style="font-size: 26px;font-weight: 700;letter-spacing: -0.02em;line-height: 32px;color: #41637e;font-family: sans-serif;text-align: center" align="center" id="emb-email-header"><a style="text-decoration: none;transition: all .2s;color: #41637e" href="http://ecofilmfestival.org/" target="_blank"><img style="border: 0;-ms-interpolation-mode: bicubic;display: block;Margin-left: auto;Margin-right: auto; max-width: 200px;" src="http://ecofilmfestival.org/wp-content/uploads/2015/04/logo-rnd-330x330px.png" alt=""></a></div></td></tr>
+            </tbody>
+        </table>
+
+        <table class="border" style="border-collapse: collapse;border-spacing: 0;font-size: 1px;line-height: 1px;background-color: #e9e9e9;Margin-left: auto;Margin-right: auto" width="602">
+            <tbody>
+                <tr><td style="padding: 0;vertical-align: top">​</td></tr>
+            </tbody>
+        </table>
+
+        <table class="centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+            <tbody>
+                <tr>
+                    <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">​</td>
+                    <td style="padding: 0;vertical-align: top">
+                        <table class="one-col gray" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 600px;background-color: #f7f7f7;font-size: 14px;table-layout: fixed">
+                            <tbody>
+                                <tr style="background-color: #28B38B;">
+                                    <td class="column" style="padding: 0;vertical-align: top;text-align: left">
+
+                                        <h1 style="color: #FFFFFF;font-family: sans-serif;text-align: center">Registro de Cortometraje</h1>
+                                        <p style="
+                                            color: white;
+                                            text-align: center;
+                                            font-weight: 300;
+                                            font-family: sans-serif;
+                                            line-height: 0em;
+                                        ">Shortfilm Registry</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">​&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="border" style="border-collapse: collapse;border-spacing: 0;font-size: 1px;line-height: 1px;background-color: #e9e9e9;Margin-left: auto;Margin-right: auto" width="602">
+            <tbody>
+                <tr class="border" style="font-size: 1px;line-height: 1px;background-color: #e9e9e9;height: 1px">
+                    <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">​</td>
+                    <td style="padding: 0;vertical-align: top;line-height: 1px">​</td>
+                    <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">​</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+            <tbody>
+                <tr>
+                    <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">​</td>
+                    <td style="padding: 0;vertical-align: top">
+                        <table class="one-col" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 600px;background-color: #ffffff;font-size: 14px;table-layout: fixed">
+                            <tbody>
+                                <tr>
+                                    <td class="column" style="padding: 0;vertical-align: top;text-align: left">
+                                        <div><div class="column-top" style="font-size: 32px;line-height: 32px">&nbsp;</div></div>
+                                        <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 32px;word-break: break-word;word-wrap: break-word">
+                                                        <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
+                                                            <strong>Hola@*<span style="color:red">@Model.Email</span>*@!</strong><br />
+                                                            Gracias por participar en la 5ta edición del Ecofilm Festival / Cambio Climatico. Si eres seleccionado, serás notificado al correo registrado antes del 30 de septiembre, con las instrucciones necesarias para continuar en competencia.
+                                                        </p>
+                                                        <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
+                                                            Cortometraje <span style="color:red">@Model.Titulo_Original</span><br />
+                                                            Categoría <span style="color:red">@Model.Categoria_ES</span><br />
+                                                            Pais <span style="color:red">@Model.Pais_ES</span><br />
+                                                        </p>
+                                                        <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
+                                                            Síguenos por <a href="https://www.facebook.com/EcoFilmFestivalMX Facebook">Facebook</a> y <a href="https://twitter.com/EcofilmFestival">Twitter</a>
+                                                        </p>
+                                                        <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
+                                                            Buena Suerte!
+                                                        </p>
+                                                        <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
+                                                            Te esperamos en Octubre!<br />
+                                                            <i>@Model.MsgEsp</i>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 32px;word-break: break-word;word-wrap: break-word">
+
+                                                        <table class="divider" style="border-collapse: collapse;border-spacing: 0;width: 100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="inner" style="padding: 0;vertical-align: top;padding-bottom: 24px" align="center">
+                                                                        <table style="border-collapse: collapse;border-spacing: 0;background-color: #e9e9e9;font-size: 2px;line-height: 2px;width: 60px">
+                                                                            <tbody>
+                                                                                <tr><td style="padding: 0;vertical-align: top">&nbsp;</td></tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 32px;word-break: break-word;word-wrap: break-word">
+
+                                                        <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
+                                                            <strong>Hello@*<span style="color:red">@Model.Email</span>*@!</strong><br />
+                                                            Your film has been registered! Thank you for submitting your film to Ecofilm Festival 2015. In case of being selected you will receive an email before the 30th of September with the instructions to go on with the competition.
+                                                        </p>
+                                                        <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
+                                                            ShortFilm <span style="color:red">@Model.Titulo_Original</span><br />
+                                                            Category <span style="color:red">@Model.Categoria_EN</span><br />
+                                                            Country <span style="color:red">@Model.Pais_EN</span><br />
+                                                        </p>
+                                                        <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
+                                                            Follow us in <a href="https://www.facebook.com/EcoFilmFestivalMX Facebook">Facebook</a> y <a href="https://twitter.com/EcofilmFestival">Twitter</a>
+                                                        </p>
+                                                        <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
+                                                            Good luck!
+                                                        </p>
+                                                        <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
+                                                            Hope to see you in October!<br />
+                                                            <i>@Model.MsgIng</i>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="column-bottom" style="font-size: 8px;line-height: 8px">&nbsp;</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">​</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="border" style="border-collapse: collapse;border-spacing: 0;font-size: 1px;line-height: 1px;background-color: #e9e9e9;Margin-left: auto;Margin-right: auto" width="602">
+            <tbody>
+                <tr><td style="padding: 0;vertical-align: top">​</td></tr>
+            </tbody>
+        </table>
+        <table class="footer centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 602px">
+            <tbody>
+
+                <tr><td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">&nbsp;</td></tr>
+                <tr>
+                    <td style="padding: 0;vertical-align: top">
+                        <table style="border-collapse: collapse;border-spacing: 0">
+                            <tbody>
+                                <tr>
+                                    <td class="address" style="padding: 0;vertical-align: top;width: 250px;padding-top: 32px;padding-bottom: 64px">
+                                        <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="padded" style="padding: 0;vertical-align: top;padding-left: 0;padding-right: 10px;word-break: break-word;word-wrap: break-word;text-align: left;font-size: 12px;line-height: 20px;color: #999;font-family: Georgia,serif">
+                                                        <div style="font-size: smaller;font-family: sans-serif;line-height: 1em;">
+                                                            ECOFILM Festival 2015<br>
+                                                            <a href="http://ecofilmfestival.org/">www.ecofilmfestival.org</a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td class="subscription" style="padding: 0;vertical-align: top;width: 350px;padding-top: 32px;padding-bottom: 64px">
+                                        <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="padded" style="padding: 0;vertical-align: top;padding-left: 10px;padding-right: 0;word-break: break-word;word-wrap: break-word;font-size: 12px;line-height: 20px;color: #999;font-family: Georgia,serif;text-align: right">
+
+                                                        <div>
+                                                            <span class="block">
+                                                            </span>
+                                                            <span class="block">&nbsp;</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+</body>
+</html>
