@@ -1,10 +1,11 @@
-﻿@model ECO._2015.Models.RegisterNotificationViewModel
+﻿@using ECO._2015.Bussiness
+@model MailNotificationViewModel
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>@Model.RegisterUserMailSubject</title>
+    <title>Registro de Cortometraje | Shortfilm Registry</title>
 </head>
 <body style="margin: 0;mso-line-height-rule: exactly;padding: 0;min-width: 100%;background-color: #fbfbfb;background: url('http://ecofilmfestival.org/wp-content/uploads/2016/04/mail-templates-ecoff6_preview-1.jpg') center; background-repeat: no-repeat;">
     <style type="text/css">
@@ -307,7 +308,7 @@
                         <table style="border-collapse: collapse;border-spacing: 0;width: 602px">
                             <tbody>
                                 <tr>
-                                    <td class="title" style="padding: 0;vertical-align: top;padding-top: 10px;padding-bottom: 12px;font-size: 12px;line-height: 21px;text-align: left;color: #999;font-family: Georgia,serif; text-align: center;">Notificación de Registro | Sign Up Notification</td>
+                                    <td class="title" style="padding: 0;vertical-align: top;padding-top: 10px;padding-bottom: 12px;font-size: 12px;line-height: 21px;text-align: left;color: #999;font-family: Georgia,serif; text-align: center;">Registro de Cortometraje | Shortfilm Registry</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -346,17 +347,17 @@
                     <td style="padding: 0;vertical-align: top">
                         <table class="one-col gray" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 600px;background-color: #f7f7f7;font-size: 14px;table-layout: fixed">
                             <tbody>
-                                <tr style="background-color: #f9b233;">
+                                <tr style="background-color: #28B38B;">
                                     <td class="column" style="padding: 0;vertical-align: top;text-align: left">
 
-                                        <h1 style="color: #FFFFFF;font-family: sans-serif;text-align: center">Notificación de Registro</h1>
+                                        <h1 style="color: #FFFFFF;font-family: sans-serif;text-align: center">Registro de Cortometraje</h1>
                                         <p style="
                                            color: white;
                                            text-align: center;
                                            font-weight: 300;
                                            font-family: sans-serif;
                                            line-height: 0em;
-                                           ">Sign Up Notification</p>
+                                           ">Shortfilm Registry</p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -391,27 +392,25 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 32px;word-break: break-word;word-wrap: break-word">
-
                                                         <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
-                                                            <strong>Hola <span style="color:red">@Model.Email</span>!</strong><br />
-                                                            Continúa tu registro a través de <a href="http://ecofilmfestival.info">este enlace</a><br />
-                                                            Para completar la inscripción adecuadamente debes tener listo tu cortometraje:<br />
-                                                            Compresión: H264<br />
-                                                            Formato:MP4<br />
-                                                            Tamaño: Máximo 60 Mb
+                                                            <strong>
+                                                                Hola <span style="color:red">@Model.Email</span>
+                                                            </strong><br />
+                                                            @Model.MsgEsp
+                                                        </p>
+                                                        <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
+                                                            Cortometraje <span style="color:red">@Model.Titulo_Original</span><br />
+                                                            Categoría <span style="color:red">@Model.Categoria_ES</span><br />
+                                                            Pais <span style="color:red">@Model.Pais_ES</span><br />
                                                         </p>
                                                         <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
                                                             Síguenos por <a href="https://www.facebook.com/EcoFilmFestivalMX Facebook">Facebook</a> y <a href="https://twitter.com/EcofilmFestival">Twitter</a>
                                                         </p>
                                                         <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
-                                                            Suerte!
+                                                            Buena Suerte!
                                                         </p>
                                                         <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
-                                                            ECOFILM FESTIVAL<br />
-                                                            @Model.FestivalTemaEsp
-                                                        </p>
-                                                        <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
-                                                            @Model.RegisterUserMailMsgEsp
+                                                            Te esperamos en Octubre!<br />
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -447,25 +446,22 @@
                                                     <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 32px;word-break: break-word;word-wrap: break-word">
 
                                                         <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
-                                                            <strong>Hello <span style="color:red">@Model.Email</span>!</strong><br />
-                                                            Continue your registration process through <a href="http://ecofilmfestival.info">this link</a><br />
-                                                            In order  to complete the registration properly, you must have your shortfilm ready:<br />
-                                                            Compression: H264<br />
-                                                            Format: MP4<br />
-                                                            Size: Maximum 60 Mb
+                                                            <strong>Hello <span style="color:red">@Model.Email</span></strong><br />
+                                                            @Model.MsgIng
                                                         </p>
                                                         <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
-                                                            Follow us <a href="https://www.facebook.com/EcoFilmFestivalMX Facebook">Facebook</a> and <a href="https://twitter.com/EcofilmFestival">Twitter</a>
+                                                            ShortFilm <span style="color:red">@Model.Titulo_Original</span><br />
+                                                            Category <span style="color:red">@Model.Categoria_EN</span><br />
+                                                            Country <span style="color:red">@Model.Pais_EN</span><br />
                                                         </p>
                                                         <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
-                                                            Good Luck!
+                                                            Follow us in <a href="https://www.facebook.com/EcoFilmFestivalMX Facebook">Facebook</a> y <a href="https://twitter.com/EcofilmFestival">Twitter</a>
                                                         </p>
                                                         <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
-                                                            ECOFILM FESTIVAL<br />
-                                                            @Model.FestivalTemaIng
+                                                            Good luck!
                                                         </p>
                                                         <p style="Margin-top: 0;color: #565656;font-family: sans-serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px; text-align:center;">
-                                                            @Model.RegisterUserMailMsgIng
+                                                            Hope to see you in October!<br />
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -490,18 +486,7 @@
         </table>
         <table class="footer centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 602px">
             <tbody>
-                <tr>
-                    <td class="social" style="padding: 0;vertical-align: top;padding-top: 32px;padding-bottom: 22px" align="center">
-                        <a href="http://ecofilmfestival.info/" style="
-                           background-color: #EF1B3B;
-                           color: #FFFFFF;
-                           border-radius: .2em;
-                           padding: 1em 2em;
-                           font-family: sans-serif;
-                           font-size: .9em;
-                           ">ECOFILM Festival @Model.EdicionFestival</a>
-                    </td>
-                </tr>
+
                 <tr><td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #f9f9f9;width: 1px">&nbsp;</td></tr>
                 <tr>
                     <td style="padding: 0;vertical-align: top">
@@ -514,7 +499,7 @@
                                                 <tr>
                                                     <td class="padded" style="padding: 0;vertical-align: top;padding-left: 0;padding-right: 10px;word-break: break-word;word-wrap: break-word;text-align: left;font-size: 12px;line-height: 20px;color: #999;font-family: Georgia,serif">
                                                         <div style="font-size: smaller;font-family: sans-serif;line-height: 1em;">
-                                                            ECOFILM Festival @Model.EdicionFestival<br>
+                                                            ECOFILM Festival 2016<br>
                                                             <a href="http://ecofilmfestival.org/">www.ecofilmfestival.org</a>
                                                         </div>
                                                     </td>
